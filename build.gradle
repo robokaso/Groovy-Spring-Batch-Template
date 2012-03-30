@@ -1,0 +1,13 @@
+apply plugin: 'eclipse'
+apply plugin: 'groovy'
+
+repositories {
+	mavenCentral()
+	maven { url "http://maven.springframework.org/release" }
+}
+
+dependencies {
+	groovy group: 'org.codehaus.groovy', name: 'groovy-all', version: '1.8.6'
+	compile group: 'org.springframework.batch', name: 'spring-batch-core', version: '2.1.8.RELEASE'
+	testCompile group: 'org.spockframework', name: 'spock-core', version: '0.6-groovy-1.8'
+}
