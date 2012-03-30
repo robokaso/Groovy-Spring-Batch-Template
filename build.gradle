@@ -27,6 +27,7 @@ dependencies {
 	//compile group: 'org.grails', name: 'grails-spring', version: '2.0.2'
 	
 	testCompile group: 'org.spockframework', name: 'spock-core', version: '0.6-groovy-1.8'
+	testCompile group: 'org.spockframework', name: 'spock-spring', version: '0.6-groovy-1.8'
 	testCompile group: 'org.springframework.batch', name: 'spring-batch-test', version: BATCH_VERSION
 	testCompile group: 'org.springframework', name: 'spring-test', version: SPRING_VERSION
 	testCompile group: 'hsqldb', name: 'hsqldb', version: '1.8.0.7'

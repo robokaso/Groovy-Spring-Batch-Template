@@ -3,17 +3,17 @@ package example
 import static org.junit.Assert.assertNotNull
 
 import org.junit.Test
-import org.junit.runner.RunWith
+import org.springframework.batch.core.ExitStatus
 import org.springframework.batch.core.Job
 import org.springframework.batch.core.JobParameters
 import org.springframework.batch.core.launch.JobLauncher
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.test.context.ContextConfiguration
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner
+
+import spock.lang.Specification
 
 @ContextConfiguration(locations=['/launch-context.xml'])
-@RunWith(SpringJUnit4ClassRunner.class)
-class ExampleJobConfigurationTests {
+class ExampleJobConfigurationTests extends Specification {
 	
 	@Autowired
 	private JobLauncher jobLauncher
@@ -21,14 +21,19 @@ class ExampleJobConfigurationTests {
 	@Autowired
 	private Job job
 	
-	@Test
-	void testSimpleProperties() {
-		assertNotNull(jobLauncher)
+	void 'simple properties injection'() {
+		
+		expect: 
+			jobLauncher != null
 	}
 	
-	@Test
-	void testLaunchJob() {
-		jobLauncher.run(job, new JobParameters())
+	void 'launch job'() {
+		
+		when: "job is run"
+			def jobExecution = jobLauncher.run(job, new JobParameters())
+			
+		then: "it completes successfully (execution is synchronous, so we don't have to wait for completion)"
+			jobExecution.exitStatus == ExitStatus.COMPLETED
 	}
 	
 }
