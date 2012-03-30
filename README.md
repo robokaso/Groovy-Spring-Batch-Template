@@ -1,0 +1,25 @@
+Groovy Spring Batch Template
+============================
+
+is a groovy alternative to the Simple Spring Batch Project template available in STS.
+
+Features:
+---------
+
+* Groovy implementation (instead of Java)
+* Gradle build system (instead of Maven)
+* Spock specifications (instead of JUnit)
+* no IDE dependency (instead of requiring STS - all you're loosing is the package name selection wizard anyway)  
+
+Future directions:
+------------------
+
+* full-featured build
+	* packaging as standalone executable jar
+	* code quality report
+	* test coverage report
+	* ...
+* get rid of the remaining XML configuration - use Groovy exclusively
+* try out [BeanBuilder](http://grails.org/doc/latest/guide/spring.html#14.3 Runtime Spring with the Beans DSL) for configuration
+	* watch out for it's awful dependency graph
+	* is it worthwhile given [JavaConfig](http://static.springsource.org/spring/docs/3.1.x/spring-framework-reference/html/beans.html#beans-java) works nicely? 
