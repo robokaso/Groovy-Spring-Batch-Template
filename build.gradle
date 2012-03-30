@@ -22,6 +22,7 @@ dependencies {
 //	compile group: 'org.springframework', name: 'spring-orm', version: SPRING_VERSION
 //	compile group: 'org.springframework', name: 'spring-oxm', version: SPRING_VERSION
 	compile group: 'cglib', name: 'cglib-nodep', version: '2.2.2'
+	compile group: 'commons-dbcp', name: 'commons-dbcp', version: '1.4'
 	
 	// beanbuilder dsl would be a nice addition, but it's dependency graph is awful
 	//compile group: 'org.grails', name: 'grails-spring', version: '2.0.2'
@@ -30,5 +31,5 @@ dependencies {
 	testCompile group: 'org.spockframework', name: 'spock-spring', version: '0.6-groovy-1.8'
 	testCompile group: 'org.springframework.batch', name: 'spring-batch-test', version: BATCH_VERSION
 	testCompile group: 'org.springframework', name: 'spring-test', version: SPRING_VERSION
-	testCompile group: 'hsqldb', name: 'hsqldb', version: '1.8.0.7'
+	testCompile group: 'hsqldb', name: 'hsqldb', version: '1.8.0.10'
 }
