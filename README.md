@@ -16,7 +16,7 @@ Future directions:
 ------------------
 
 * full-featured build
-	* packaging as standalone executable jar
+	* standalone executable jar (requires merging META-INF/spring.handlers)
 	* code quality report
 	* test coverage report
 	* ...

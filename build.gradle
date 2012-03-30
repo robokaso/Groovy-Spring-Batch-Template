@@ -33,3 +33,12 @@ dependencies {
 	testCompile group: 'org.springframework', name: 'spring-test', version: SPRING_VERSION
 	testCompile group: 'hsqldb', name: 'hsqldb', version: '1.8.0.10'
 }
+
+jar {
+//	bundle all dependencies to produce a fat standalone jar -> META-INF/spring.handlers need to be merged properly
+//	from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+	
+	manifest {
+		attributes 'Main-Class': 'org.springframework.batch.core.launch.support.CommandLineJobRunner'
+	}
+}
