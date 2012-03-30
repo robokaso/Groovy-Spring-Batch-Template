@@ -1,7 +1,8 @@
 Groovy Spring Batch Template
 ============================
 
-is a groovy alternative to the Simple Spring Batch Project template available in STS.
+is a groovy alternative to the [Simple Spring Batch Project](http://static.springsource.org/spring-batch/getting-started.html) 
+template available in [STS](http://www.springsource.com/developer/sts).
 
 Features:
 ---------
@@ -23,3 +24,12 @@ Future directions:
 * try out [BeanBuilder](http://grails.org/doc/latest/guide/spring.html#14.3 Runtime Spring with the Beans DSL) for configuration
 	* watch out for it's awful dependency graph
 	* is it worthwhile given [JavaConfig](http://static.springsource.org/spring/docs/3.1.x/spring-framework-reference/html/beans.html#beans-java) works nicely? 
+	
+	
+CI:
+-----
+
+check whether the the code works [here](https://robokasofoss.ci.cloudbees.com/job/groovy-spring-batch-template/),
+thanks to free [Cloudbees FOSS support](http://www.cloudbees.com/foss).
+
+![Cloudbees](http://web-static-cloudfront.s3.amazonaws.com/images/badges/BuiltOnDEV.png)
