@@ -4,8 +4,6 @@ import spock.lang.Specification
 
 class ExampleItemWriterSpec extends Specification {
 
-	private ExampleItemWriter writer = new ExampleItemWriter();
-	
 	void 'write outputs'()  {
 		
 		given:

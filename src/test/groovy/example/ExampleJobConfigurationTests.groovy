@@ -1,8 +1,5 @@
 package example
 
-import static org.junit.Assert.assertNotNull
-
-import org.junit.Test
 import org.springframework.batch.core.ExitStatus
 import org.springframework.batch.core.Job
 import org.springframework.batch.core.JobParameters
