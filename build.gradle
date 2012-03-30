@@ -7,7 +7,27 @@ repositories {
 }
 
 dependencies {
+
+	final SPRING_VERSION = '3.1.1.RELEASE'
+	final BATCH_VERSION = '2.1.8.RELEASE'
+
 	groovy group: 'org.codehaus.groovy', name: 'groovy-all', version: '1.8.6'
-	compile group: 'org.springframework.batch', name: 'spring-batch-core', version: '2.1.8.RELEASE'
+
+	compile group: 'org.springframework.batch', name: 'spring-batch-core', version: BATCH_VERSION
+
+	// Spring Batch on top of Spring 3.1 (primarily to avoid xml configuration)
+	// (latest version wins in conflict resolution)
+	compile group: 'org.springframework', name: 'spring-tx', version: SPRING_VERSION
+	compile group: 'org.springframework', name: 'spring-jdbc', version: SPRING_VERSION
+//	compile group: 'org.springframework', name: 'spring-orm', version: SPRING_VERSION
+//	compile group: 'org.springframework', name: 'spring-oxm', version: SPRING_VERSION
+	compile group: 'cglib', name: 'cglib-nodep', version: '2.2.2'
+	
+	// beanbuilder dsl would be a nice addition, but it's dependency graph is awful
+	//compile group: 'org.grails', name: 'grails-spring', version: '2.0.2'
+	
 	testCompile group: 'org.spockframework', name: 'spock-core', version: '0.6-groovy-1.8'
+	testCompile group: 'org.springframework.batch', name: 'spring-batch-test', version: BATCH_VERSION
+	testCompile group: 'org.springframework', name: 'spring-test', version: SPRING_VERSION
+	testCompile group: 'hsqldb', name: 'hsqldb', version: '1.8.0.7'
 }
