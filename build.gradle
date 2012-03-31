@@ -1,6 +1,7 @@
 apply plugin: 'eclipse'
 apply plugin: 'groovy'
-apply plugin: 'codenarc'
+// currently breaks the Cloudbees build due to obsolete gradle version
+//apply plugin: 'codenarc'
 
 repositories {
 	mavenCentral()
@@ -44,15 +45,15 @@ jar {
 	}
 }
 
-codenarc {
-	toolVersion = '0.17'
-	configFile = new File("${project.projectDir.absolutePath}/config/codenarc/ruleset.groovy")
-	
-	// consumed by Jenkins Violations plugin
-	reportFormat = 'xml'
-	
-	// don't let codenarc violations fail the build
-	tasks.withType(CodeNarc).all { codeNarcTask ->
-		codeNarcTask.ignoreFailures = true
-	}
-}
+//codenarc {
+//	toolVersion = '0.17'
+//	configFile = new File("${project.projectDir.absolutePath}/config/codenarc/ruleset.groovy")
+//	
+//	// consumed by Jenkins Violations plugin
+//	reportFormat = 'xml'
+//	
+//	// don't let codenarc violations fail the build
+//	tasks.withType(CodeNarc).all { codeNarcTask ->
+//		codeNarcTask.ignoreFailures = true
+//	}
+//}
