@@ -2,22 +2,38 @@ Groovy Spring Batch Template
 ============================
 
 is a groovy alternative to the [Simple Spring Batch Project](http://static.springsource.org/spring-batch/getting-started.html) 
-template available in [STS](http://www.springsource.com/developer/sts).
+template shipped with [STS](http://www.springsource.com/developer/sts).
 
-Features
---------
+	
+What's the difference?
+------------------
 
-* Groovy implementation (instead of Java)
-* Gradle build system (instead of Maven)
-* Spock specifications (instead of JUnit)
-* IDE agnostic (instead of requiring STS - you're only loosing the initial package name selection wizard)  
-* ready to roll - try launching your job from command line (`gradle run`), then package for distribution (`gradle distZip`)
+<table>
+<th></th><th>Groovy Spring Batch Template</th> <th>STS Simple Spring Batch Project</th>
+<tr> <td>Language</td>	<td>Groovy</td> 	<td>Java</td> 	</tr>
+<tr> <td>Build system</td>		<td>Gradle</td>		<td>Maven</td>	</tr>
+<tr> <td>Test framework</td>	<td>Spock</td>		<td>JUnit</td>	</tr>
+</tr>
+</table>
+
+
+Installation & Usage
+--------------------
+
+	git clone git://github.com/robokaso/Groovy-Spring-Batch-Template.git gsbt; cd gsbt
+	./gradlew run 		# executes the sample job
+	./gradlew distZip 	# packages the project for distribution 
+	
+CI
+----
+
+check whether the the code works [here](https://robokasofoss.ci.cloudbees.com/job/groovy-spring-batch-template/)
+
 
 Future directions
 -----------------
 
 * full-featured build
-	* code quality report
 	* test coverage report
 	* docs
 	* ...
@@ -28,10 +44,6 @@ Future directions
 * GORM example
 	
 	
-CI
-----
-
-check whether the the code works [here](https://robokasofoss.ci.cloudbees.com/job/groovy-spring-batch-template/)
 
 License
 --------
