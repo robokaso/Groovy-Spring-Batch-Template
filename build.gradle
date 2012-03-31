@@ -48,7 +48,7 @@ task wrapper(type: Wrapper) {
 
 codenarc {
 	toolVersion = '0.17'
-	configFile = new File("${project.projectDir.absolutePath}/config/codenarc/ruleset.groovy")
+	configFile = new File("${project.projectDir.absolutePath}/gradle/codenarc/ruleset.groovy")
 	
 	// consumed by Jenkins Violations plugin
 	reportFormat = 'xml'
