@@ -4,8 +4,8 @@ Groovy Spring Batch Template
 is a groovy alternative to the [Simple Spring Batch Project](http://static.springsource.org/spring-batch/getting-started.html) 
 template available in [STS](http://www.springsource.com/developer/sts).
 
-Features:
----------
+Features
+--------
 
 * Groovy implementation (instead of Java)
 * Gradle build system (instead of Maven)
@@ -13,8 +13,8 @@ Features:
 * IDE agnostic (instead of requiring STS - you're only loosing the initial package name selection wizard)  
 * ready to roll - try launching your job from command line (`gradle run`), then package for distribution (`gradle distZip`)
 
-Future directions:
-------------------
+Future directions
+-----------------
 
 * full-featured build
 	* code quality report
@@ -28,17 +28,17 @@ Future directions:
 * GORM example
 	
 	
-CI:
------
+CI
+----
 
 check whether the the code works [here](https://robokasofoss.ci.cloudbees.com/job/groovy-spring-batch-template/)
 
-License:
+License
 --------
 
 Apache 2.0, i.e. same as [Spring Batch License](http://static.springsource.org/spring-batch/license.html)
 
 
-Credits:
---------
+Credits
+-------
 [<img src="http://web-static-cloudfront.s3.amazonaws.com/images/badges/BuiltOnDEV.png" alt="Cloudbees"/>](http://www.cloudbees.com/foss)
