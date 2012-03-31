@@ -1,4 +1,3 @@
-apply plugin: 'eclipse'
 apply plugin: 'groovy'
 apply plugin:'application'
 
