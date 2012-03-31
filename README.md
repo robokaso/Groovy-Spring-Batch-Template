@@ -10,7 +10,7 @@ Features:
 * Groovy implementation (instead of Java)
 * Gradle build system (instead of Maven)
 * Spock specifications (instead of JUnit)
-* IDE agnostic (instead of requiring STS - you're only loosing is the initial package name selection wizard)  
+* IDE agnostic (instead of requiring STS - you're only loosing the initial package name selection wizard)  
 * ready to roll - try launching your job from command line (`gradle run`), then package for distribution (`gradle distZip`)
 
 Future directions:
