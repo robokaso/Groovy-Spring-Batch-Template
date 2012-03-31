@@ -41,6 +41,10 @@ run {
 	args 'launch-context.xml', 'job1'
 }
 
+task wrapper(type: Wrapper) {
+	gradleVersion = '1.0-milestone-9'
+}
+
 // currently breaks the Cloudbees build due to obsolete gradle version, see https://cloudbees.zendesk.com/requests/3115
 //apply plugin: 'codenarc'
 //codenarc {
