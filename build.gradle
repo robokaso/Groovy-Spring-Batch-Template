@@ -1,5 +1,6 @@
 apply plugin: 'eclipse'
 apply plugin: 'groovy'
+apply plugin:'application'
 
 repositories {
 	mavenCentral()
@@ -10,6 +11,7 @@ dependencies {
 
 	final SPRING_VERSION = '3.1.1.RELEASE'
 	final BATCH_VERSION = '2.1.8.RELEASE'
+	final SPOCK_VERSION = '0.6-groovy-1.8'
 
 	groovy group: 'org.codehaus.groovy', name: 'groovy-all', version: '1.8.6'
 
@@ -23,23 +25,21 @@ dependencies {
 //	compile group: 'org.springframework', name: 'spring-oxm', version: SPRING_VERSION
 	compile group: 'cglib', name: 'cglib-nodep', version: '2.2.2'
 	compile group: 'commons-dbcp', name: 'commons-dbcp', version: '1.4'
+	compile group: 'hsqldb', name: 'hsqldb', version: '1.8.0.10'
 	
 	// beanbuilder dsl would be a nice addition, but it's dependency graph is awful
 	//compile group: 'org.grails', name: 'grails-spring', version: '2.0.2'
 	
-	testCompile group: 'org.spockframework', name: 'spock-core', version: '0.6-groovy-1.8'
-	testCompile group: 'org.spockframework', name: 'spock-spring', version: '0.6-groovy-1.8'
+	testCompile group: 'org.spockframework', name: 'spock-core', version: SPOCK_VERSION
+	testCompile group: 'org.spockframework', name: 'spock-spring', version: SPOCK_VERSION
 	testCompile group: 'org.springframework.batch', name: 'spring-batch-test', version: BATCH_VERSION
 	testCompile group: 'org.springframework', name: 'spring-test', version: SPRING_VERSION
-	testCompile group: 'hsqldb', name: 'hsqldb', version: '1.8.0.10'
 }
 
-jar {
-//	bundle all dependencies to produce a fat standalone jar -> META-INF/spring.handlers need to be merged properly
-//	from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } } 
-	manifest {
-		attributes 'Main-Class': 'org.springframework.batch.core.launch.support.CommandLineJobRunner'
-	}
+mainClassName = 'org.springframework.batch.core.launch.support.CommandLineJobRunner'
+
+run {
+	args 'launch-context.xml', 'job1'
 }
 
 // currently breaks the Cloudbees build due to obsolete gradle version, see https://cloudbees.zendesk.com/requests/3115

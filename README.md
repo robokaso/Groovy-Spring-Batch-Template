@@ -11,14 +11,15 @@ Features:
 * Gradle build system (instead of Maven)
 * Spock specifications (instead of JUnit)
 * no IDE dependency (instead of requiring STS - all you're loosing is the package name selection wizard anyway)  
+* ready to roll - try launching your job from command line (`gradle run`), then package for distribution (`gradle distZip`)
 
 Future directions:
 ------------------
 
 * full-featured build
-	* standalone executable jar (requires merging META-INF/spring.handlers)
 	* code quality report
 	* test coverage report
+	* docs
 	* ...
 * get rid of the remaining XML configuration - use Groovy exclusively
 * try out [BeanBuilder](http://grails.org/doc/latest/guide/spring.html#14.3 Runtime Spring with the Beans DSL) for configuration
