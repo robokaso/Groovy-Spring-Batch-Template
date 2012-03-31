@@ -215,7 +215,7 @@ ruleset {
 	JUnitAssertAlwaysFails
 	JUnitAssertAlwaysSucceeds
 	JUnitFailWithoutMessage
-	JUnitPublicNonTestMethod
+//	JUnitPublicNonTestMethod
 	JUnitSetUpCallsSuper
 	JUnitStyleAssertions
 	JUnitTearDownCallsSuper
@@ -248,7 +248,7 @@ ruleset {
 	FactoryMethodName
 	FieldName
 	InterfaceName
-	MethodName
+//	MethodName
 	ObjectOverrideMisspelledMethodName
 	PackageName
 	ParameterName
@@ -302,7 +302,7 @@ ruleset {
 	UnnecessaryElseStatement
 	UnnecessaryFinalOnPrivateMethod
 	UnnecessaryFloatInstantiation
-	UnnecessaryGString
+//	UnnecessaryGString
 	UnnecessaryGetter
 	UnnecessaryIfStatement
 	UnnecessaryInstanceOfCheck

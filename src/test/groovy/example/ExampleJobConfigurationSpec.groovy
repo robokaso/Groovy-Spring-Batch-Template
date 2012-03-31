@@ -10,7 +10,7 @@ import org.springframework.test.context.ContextConfiguration
 import spock.lang.Specification
 
 @ContextConfiguration(locations=['/launch-context.xml'])
-class ExampleJobConfigurationTests extends Specification {
+class ExampleJobConfigurationSpec extends Specification {
 	
 	@Autowired
 	private JobLauncher jobLauncher

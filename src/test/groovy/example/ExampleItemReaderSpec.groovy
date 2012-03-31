@@ -7,7 +7,7 @@ class ExampleItemReaderSpec extends Specification {
 	def read() {
 		
 		given:
-			def reader = new ExampleItemReader(inputs: ["hello", "world"])
+			def reader = new ExampleItemReader(inputs: ['hello', 'world'])
 			
 		expect:	"hard-coded inputs are returned in expected sequence, followed by null"
 			reader.read() == 'hello'
