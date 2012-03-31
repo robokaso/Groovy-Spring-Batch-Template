@@ -1,7 +1,5 @@
 apply plugin: 'eclipse'
 apply plugin: 'groovy'
-// currently breaks the Cloudbees build due to obsolete gradle version
-//apply plugin: 'codenarc'
 
 repositories {
 	mavenCentral()
@@ -38,13 +36,14 @@ dependencies {
 
 jar {
 //	bundle all dependencies to produce a fat standalone jar -> META-INF/spring.handlers need to be merged properly
-//	from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
-	
+//	from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } } 
 	manifest {
 		attributes 'Main-Class': 'org.springframework.batch.core.launch.support.CommandLineJobRunner'
 	}
 }
 
+// currently breaks the Cloudbees build due to obsolete gradle version, see https://cloudbees.zendesk.com/requests/3115
+//apply plugin: 'codenarc'
 //codenarc {
 //	toolVersion = '0.17'
 //	configFile = new File("${project.projectDir.absolutePath}/config/codenarc/ruleset.groovy")
