@@ -1,5 +1,6 @@
 apply plugin: 'eclipse'
 apply plugin: 'groovy'
+apply plugin: 'codenarc'
 
 repositories {
 	mavenCentral()
@@ -40,5 +41,18 @@ jar {
 	
 	manifest {
 		attributes 'Main-Class': 'org.springframework.batch.core.launch.support.CommandLineJobRunner'
+	}
+}
+
+codenarc {
+	toolVersion = '0.17'
+	configFile = new File("${project.projectDir.absolutePath}/config/codenarc/ruleset.groovy")
+	
+	// consumed by Jenkins Violations plugin
+	reportFormat = 'xml'
+	
+	// don't let codenarc violations fail the build
+	tasks.withType(CodeNarc).all { codeNarcTask ->
+		codeNarcTask.ignoreFailures = true
 	}
 }
