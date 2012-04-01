@@ -2,6 +2,8 @@ apply plugin: 'groovy'
 apply plugin:'application'
 apply plugin: 'codenarc'
 
+apply from: 'https://github.com/valkolovos/gradle_cobertura/raw/master/repo/gradle_cobertura/gradle_cobertura/1.0/coberturainit.gradle'
+
 repositories {
 	mavenCentral()
 	maven { url "http://maven.springframework.org/release" }
@@ -57,4 +59,8 @@ codenarc {
 	tasks.withType(CodeNarc).all { codeNarcTask ->
 		codeNarcTask.ignoreFailures = true
 	}
+}
+
+cobertura {
+	coverageSourceDirs = [project.sourceSets.main.groovy.srcDirs] as Set
 }
