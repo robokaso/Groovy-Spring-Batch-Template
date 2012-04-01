@@ -10,9 +10,9 @@ What's the difference?
 
 <table>
 <th></th><th>Groovy Spring Batch Template</th> <th>STS Simple Spring Batch Project</th>
-<tr> <td>Language</td>	<td>Groovy</td> 	<td>Java</td> 	</tr>
-<tr> <td>Build system</td>		<td>Gradle</td>		<td>Maven</td>	</tr>
-<tr> <td>Test framework</td>	<td>Spock</td>		<td>JUnit</td>	</tr>
+<tr> <td>Language</td>			<td>Groovy</td> 	<td>Java</td> 	</tr>
+<tr> <td>Build system</td>		<td>Gradle</td>		<td>Maven</td> 	</tr>
+<tr> <td>Test framework</td>	<td>Spock</td>		<td>JUnit</td> 	</tr>
 <tr> <td>Logging facade</td>	<td>SLF4J</td>		<td>Commons Logging</td>	</tr>
 </tr>
 </table>
@@ -24,6 +24,7 @@ Installation & Usage
 	git clone git://github.com/robokaso/Groovy-Spring-Batch-Template.git gsbt; cd gsbt
 	./gradlew run 		# executes the sample job
 	./gradlew distZip 	# packages the project for distribution 
+	./gradlew cobertura	check 	# runs the tests and generates code quality and test coverage reports
 	
 CI
 ----
