@@ -22,7 +22,6 @@ dependencies {
 
 	// Spring Batch on top of Spring 3.1 (primarily to avoid xml configuration)
 	// (latest version wins in conflict resolution)
-	
 	compile group: 'org.springframework', name: 'spring-tx', version: SPRING_VERSION
 	compile group: 'org.springframework', name: 'spring-jdbc', version: SPRING_VERSION
 //	compile group: 'org.springframework', name: 'spring-orm', version: SPRING_VERSION
@@ -32,9 +31,6 @@ dependencies {
 	compile group: 'hsqldb', name: 'hsqldb', version: '1.8.0.10'
 	
 //	logging spring cleaning - use slf4j instead of commons-logging	
-	compile(group: 'org.springframework', name: 'spring-context', version: SPRING_VERSION) {
-		exclude module: 'commons-logging'
-	}
 	runtime group: 'org.slf4j', name: 'jcl-over-slf4j', version: SLF4J_VERSION
 	runtime group: 'org.slf4j', name: 'slf4j-log4j12', version: SLF4J_VERSION
 	compile group: 'org.slf4j', name: 'slf4j-api', version: SLF4J_VERSION
@@ -47,6 +43,10 @@ dependencies {
 	testCompile group: 'org.spockframework', name: 'spock-spring', version: SPOCK_VERSION
 	testCompile group: 'org.springframework.batch', name: 'spring-batch-test', version: BATCH_VERSION
 	testCompile group: 'org.springframework', name: 'spring-test', version: SPRING_VERSION
+}
+
+configurations {
+	all*.exclude module: 'commons-logging' // we use slf4j instead
 }
 
 mainClassName = 'org.springframework.batch.core.launch.support.CommandLineJobRunner'
