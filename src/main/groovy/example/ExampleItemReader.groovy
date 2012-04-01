@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component
 @Component('reader')
 class ExampleItemReader implements ItemReader<Object> {
 
-	List inputs = []
+	List inputs = ["hello", "world"]
 	
 	private int index = 0
 	

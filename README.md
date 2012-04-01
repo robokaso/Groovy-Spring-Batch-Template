@@ -13,6 +13,7 @@ What's the difference?
 <tr> <td>Language</td>	<td>Groovy</td> 	<td>Java</td> 	</tr>
 <tr> <td>Build system</td>		<td>Gradle</td>		<td>Maven</td>	</tr>
 <tr> <td>Test framework</td>	<td>Spock</td>		<td>JUnit</td>	</tr>
+<tr> <td>Logging facade</td>	<td>SLF4J</td>		<td>Commons Logging</td>	</tr>
 </tr>
 </table>
 

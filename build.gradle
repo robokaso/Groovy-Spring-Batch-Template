@@ -14,6 +14,7 @@ dependencies {
 	final SPRING_VERSION = '3.1.1.RELEASE'
 	final BATCH_VERSION = '2.1.8.RELEASE'
 	final SPOCK_VERSION = '0.6-groovy-1.8'
+	final SLF4J_VERSION = '1.6.4'
 
 	groovy group: 'org.codehaus.groovy', name: 'groovy-all', version: '1.8.6'
 
@@ -21,6 +22,7 @@ dependencies {
 
 	// Spring Batch on top of Spring 3.1 (primarily to avoid xml configuration)
 	// (latest version wins in conflict resolution)
+	
 	compile group: 'org.springframework', name: 'spring-tx', version: SPRING_VERSION
 	compile group: 'org.springframework', name: 'spring-jdbc', version: SPRING_VERSION
 //	compile group: 'org.springframework', name: 'spring-orm', version: SPRING_VERSION
@@ -28,6 +30,15 @@ dependencies {
 	compile group: 'cglib', name: 'cglib-nodep', version: '2.2.2'
 	compile group: 'commons-dbcp', name: 'commons-dbcp', version: '1.4'
 	compile group: 'hsqldb', name: 'hsqldb', version: '1.8.0.10'
+	
+//	logging spring cleaning - use slf4j instead of commons-logging	
+	compile(group: 'org.springframework', name: 'spring-context', version: SPRING_VERSION) {
+		exclude module: 'commons-logging'
+	}
+	runtime group: 'org.slf4j', name: 'jcl-over-slf4j', version: SLF4J_VERSION
+	runtime group: 'org.slf4j', name: 'slf4j-log4j12', version: SLF4J_VERSION
+	compile group: 'org.slf4j', name: 'slf4j-api', version: SLF4J_VERSION
+	
 	
 	// beanbuilder dsl would be a nice addition, but it's dependency graph is awful
 	//compile group: 'org.grails', name: 'grails-spring', version: '2.0.2'
