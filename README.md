@@ -26,6 +26,9 @@ Installation & Usage
 	./gradlew distZip 	# packages the project for distribution 
 	./gradlew cobertura	check 	# runs the tests and generates code quality and test coverage reports
 	
+STS users can conveniently import the project into workspace via `File -> Import -> Gradle Project` (you'll need to have the Gradle plugin installed).
+Others can resort to gradle support for [Eclipse](http://gradle.org/docs/current/userguide/eclipse_plugin.html) or [Idea](http://gradle.org/docs/current/userguide/idea_plugin.html).
+
 CI
 ----
 
