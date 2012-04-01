@@ -34,10 +34,6 @@ check whether the the code works [here](https://robokasofoss.ci.cloudbees.com/jo
 Future directions
 -----------------
 
-* full-featured build
-	* test coverage report
-	* docs
-	* ...
 * get rid of the remaining XML configuration - use Groovy exclusively
 * try out [BeanBuilder](http://grails.org/doc/latest/guide/spring.html#14.3 Runtime Spring with the Beans DSL) for configuration
 	* watch out for it's awful dependency graph
