@@ -23,9 +23,9 @@ Installation & Usage
 --------------------
 
 	git clone git://github.com/robokaso/Groovy-Spring-Batch-Template.git gsbt; cd gsbt
-	./gradlew run 		# executes the sample job
-	./gradlew distZip 	# packages the project for distribution 
-	./gradlew cobertura	check 	# runs the tests and generates code quality and test coverage reports
+	./gradlew run 		# execute the sample job
+	./gradlew check 	# run the tests and generate reports
+	./gradlew distZip 	# package the project for distribution 
 	
 STS users can conveniently import the project into workspace via `File -> Import -> Gradle Project` (you'll need to have the Gradle plugin installed).
 Others can resort to gradle support for [Eclipse](http://gradle.org/docs/current/userguide/eclipse_plugin.html) or [Idea](http://gradle.org/docs/current/userguide/idea_plugin.html).
