@@ -155,12 +155,12 @@ ruleset {
 	StatelessClass
 
 	// rulesets/grails.xml
-	GrailsDomainHasEquals
-	GrailsDomainHasToString
-	GrailsPublicControllerMethod
-	GrailsServletContextReference
-	GrailsSessionReference
-	GrailsStatelessService
+//	GrailsDomainHasEquals
+//	GrailsDomainHasToString
+//	GrailsPublicControllerMethod
+//	GrailsServletContextReference
+//	GrailsSessionReference
+//	GrailsStatelessService
 
 	// rulesets/groovyism.xml
 	AssignCollectionSort
@@ -274,7 +274,7 @@ ruleset {
 	// rulesets/size.xml
 	AbcComplexity
 	ClassSize
-	CrapMetric
+//	CrapMetric
 	CyclomaticComplexity
 	MethodCount
 	MethodSize
