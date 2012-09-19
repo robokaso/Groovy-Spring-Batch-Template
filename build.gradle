@@ -1,3 +1,14 @@
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath 'com.mapvine:gradle-cobertura-plugin:1.0'
+	}
+}
+
+
+apply plugin: 'cobertura'
 apply plugin: 'groovy'
 apply plugin:'application'
 apply plugin: 'codenarc'
@@ -14,7 +25,7 @@ dependencies {
 	final SPOCK_VERSION = '0.6-groovy-1.8'
 	final SLF4J_VERSION = '1.6.6'
 
-	groovy group: 'org.codehaus.groovy', name: 'groovy-all', version: '1.8.7'
+	groovy group: 'org.codehaus.groovy', name: 'groovy-all', version: '1.8.8'
 
 	compile group: 'org.springframework.batch', name: 'spring-batch-core', version: BATCH_VERSION
 
@@ -71,8 +82,7 @@ codenarc {
 	}
 }
 
-// works but pollutes the gradle output with warnings, disabled until its ready for prime time
-//apply from: 'https://github.com/valkolovos/gradle_cobertura/raw/master/repo/gradle_cobertura/gradle_cobertura/1.0/coberturainit.gradle'
-//cobertura {
-//	coverageSourceDirs = [project.sourceSets.main.groovy.srcDirs] as Set
-//}
+cobertura {
+	format = 'xml'
+	includes = ['**/*.java', '**/*.groovy']
+}
