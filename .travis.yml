@@ -2,3 +2,5 @@ language: groovy
 
 jdk:
   - openjdk7
+
+script: ./gradlew check distZip
