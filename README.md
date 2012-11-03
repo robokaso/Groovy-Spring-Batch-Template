@@ -32,29 +32,8 @@ Installation & Usage
 STS users can conveniently import the project into workspace via `File -> Import -> Gradle Project` (you'll need to have the Gradle plugin installed).
 Others can resort to gradle support for [Eclipse](http://gradle.org/docs/current/userguide/eclipse_plugin.html) or [Idea](http://gradle.org/docs/current/userguide/idea_plugin.html).
 
-CI
-----
-
-check whether the the code works [here](https://robokasofoss.ci.cloudbees.com/job/groovy-spring-batch-template/)
-
-
-Future directions
------------------
-
-* get rid of the remaining XML configuration - use Groovy exclusively
-* try out [BeanBuilder](http://grails.org/doc/latest/guide/spring.html#14.3 Runtime Spring with the Beans DSL) for configuration
-	* watch out for it's awful dependency graph
-	* is it worthwhile given [JavaConfig](http://static.springsource.org/spring/docs/3.1.x/spring-framework-reference/html/beans.html#beans-java) works nicely? 
-* GORM example
-	
-	
 
 License
 --------
 
 Apache 2.0, i.e. same as [Spring Batch License](http://static.springsource.org/spring-batch/license.html)
-
-
-Credits
--------
-[<img src="http://web-static-cloudfront.s3.amazonaws.com/images/badges/BuiltOnDEV.png" alt="Cloudbees"/>](http://www.cloudbees.com/foss)
