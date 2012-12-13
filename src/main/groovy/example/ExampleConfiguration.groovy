@@ -2,7 +2,7 @@ package example
 
 import javax.sql.DataSource
 
-import org.apache.commons.dbcp.BasicDataSource
+import com.jolbox.bonecp.BoneCPDataSource
 import org.springframework.batch.core.launch.support.SimpleJobLauncher
 import org.springframework.batch.core.repository.JobRepository
 import org.springframework.beans.factory.annotation.Autowired
@@ -32,11 +32,11 @@ class ExampleConfiguration {
 	@Qualifier('jobRepository')
 	private JobRepository jobRepository
 
-	@Bean
+	@Bean(destroyMethod="close")
 	DataSource dataSource() {
-		new BasicDataSource(
-				driverClassName: driverClassName,
-				url: driverUrl,
+		new BoneCPDataSource(
+				driverClass: driverClassName,
+				jdbcUrl: driverUrl,
 				username: driverUsername,
 				password: driverPassword
 		)
