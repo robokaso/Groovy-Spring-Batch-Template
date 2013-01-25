@@ -8,7 +8,7 @@ buildscript {
 }
 
 
-//apply plugin: 'cobertura'
+apply plugin: 'cobertura'
 apply plugin: 'groovy'
 apply plugin:'application'
 //apply plugin: 'codenarc'
@@ -25,7 +25,7 @@ dependencies {
 	final SPOCK_VERSION = '0.7-groovy-2.0'
 	final SLF4J_VERSION = '1.7.2'
 
-	groovy group: 'org.codehaus.groovy', name: 'groovy', version: '2.0.6'
+	groovy group: 'org.codehaus.groovy', name: 'groovy', version: '2.1.0'
 
 	compile group: 'org.springframework.batch', name: 'spring-batch-core', version: BATCH_VERSION
 
@@ -63,7 +63,7 @@ run {
 }
 
 task wrapper(type: Wrapper) {
-	gradleVersion = '1.3'
+	gradleVersion = '1.4-rc-3'
 }
 
 /* perhaps reenable once it's upgraded for groovy 2
@@ -81,8 +81,7 @@ codenarc {
 }
 */
 
-// fails on Travis for some reason
-//cobertura {
-//	format = 'xml'
-//	includes = ['**/*.java', '**/*.groovy']
-//}
+cobertura {
+	format = 'xml'
+	includes = ['**/*.java', '**/*.groovy']
+}
