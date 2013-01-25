@@ -80,9 +80,9 @@ codenarc {
 	}
 }
 */
-/* fails on Travis for some reason
-cobertura {
-	format = 'xml'
-	includes = ['**/*.java', '**/*.groovy']
-}
-*/
+
+// fails on Travis for some reason
+//cobertura {
+//	format = 'xml'
+//	includes = ['**/*.java', '**/*.groovy']
+//}
