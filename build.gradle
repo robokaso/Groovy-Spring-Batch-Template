@@ -20,7 +20,7 @@ repositories {
 
 dependencies {
 
-	final SPRING_VERSION = '3.2.0.RELEASE'
+	final SPRING_VERSION = '3.2.1.RELEASE'
 	final BATCH_VERSION = '2.1.9.RELEASE'
 	final SPOCK_VERSION = '0.7-groovy-2.0'
 	final SLF4J_VERSION = '1.7.2'
