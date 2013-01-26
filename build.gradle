@@ -16,12 +16,13 @@ apply plugin:'application'
 repositories {
 	mavenCentral()
 	maven { url "http://maven.springframework.org/release" }
+	maven { url "http://maven.springframework.org/milestone" }
 }
 
 dependencies {
 
 	final SPRING_VERSION = '3.2.1.RELEASE'
-	final BATCH_VERSION = '2.1.9.RELEASE'
+	final BATCH_VERSION = '2.2.0.M1'
 	final SPOCK_VERSION = '0.7-groovy-2.0'
 	final SLF4J_VERSION = '1.7.2'
 
