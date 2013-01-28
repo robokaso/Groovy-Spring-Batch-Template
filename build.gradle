@@ -26,7 +26,7 @@ dependencies {
 	final SPOCK_VERSION = '0.7-groovy-2.0'
 	final SLF4J_VERSION = '1.7.2'
 
-	groovy group: 'org.codehaus.groovy', name: 'groovy', version: '2.1.0'
+	compile 'org.codehaus.groovy:groovy:2.1.0'
 
 	compile group: 'org.springframework.batch', name: 'spring-batch-core', version: BATCH_VERSION
 
