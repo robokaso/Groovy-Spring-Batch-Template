@@ -3,5 +3,4 @@ language: groovy
 jdk:
   - openjdk7
 
-install: ./gradlew -q assemble
-script: ./gradlew clean distZip --stacktrace
+script: ./gradlew clean check distZip --stacktrace
