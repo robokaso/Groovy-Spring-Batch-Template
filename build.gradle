@@ -27,7 +27,7 @@ dependencies {
 	final SLF4J_VERSION = '1.7.2'
 
 	// use the indy jars (java 7 only!)
-	compile 'org.codehaus.groovy:groovy:2.1.0:indy'
+	compile 'org.codehaus.groovy:groovy:2.1.1:indy'
 
 	compile group: 'org.springframework.batch', name: 'spring-batch-core', version: BATCH_VERSION
 
