@@ -1,14 +1,5 @@
-buildscript {
-	repositories {
-		mavenCentral()
-	}
-	dependencies {
-		classpath 'com.mapvine:gradle-cobertura-plugin:1.0'
-	}
-}
 
-
-apply plugin: 'cobertura'
+apply plugin: 'jacoco'
 apply plugin: 'groovy'
 apply plugin:'application'
 //apply plugin: 'codenarc'
@@ -83,7 +74,11 @@ codenarc {
 }
 */
 
-cobertura {
-	format = 'xml'
-	includes = ['**/*.java', '**/*.groovy']
+
+jacocoTestReport{
+    reports {
+            xml.enabled true
+            csv.enabled false
+            //html.destination "${buildDir}/jacocoHtml"
+    }
 }
