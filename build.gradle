@@ -21,13 +21,13 @@ repositories {
 
 dependencies {
 
-	final SPRING_VERSION = '3.2.1.RELEASE'
+	final SPRING_VERSION = '3.2.2.RELEASE'
 	final BATCH_VERSION = '2.2.0.M1'
 	final SPOCK_VERSION = '0.7-groovy-2.0'
-	final SLF4J_VERSION = '1.7.2'
+	final SLF4J_VERSION = '1.7.5'
 
 	// use the indy jars (java 7 only!)
-	compile 'org.codehaus.groovy:groovy:2.1.1:indy'
+	compile 'org.codehaus.groovy:groovy:2.1.2:indy'
 
 	compile group: 'org.springframework.batch', name: 'spring-batch-core', version: BATCH_VERSION
 
@@ -37,7 +37,7 @@ dependencies {
 //	compile group: 'org.springframework', name: 'spring-orm', version: SPRING_VERSION
 //	compile group: 'org.springframework', name: 'spring-oxm', version: SPRING_VERSION
 	compile group: 'com.jolbox', name: 'bonecp-spring', version: '0.8.0-rc1'
-	compile group: 'com.h2database', name: 'h2', version: '1.3.170'
+	compile group: 'com.h2database', name: 'h2', version: '1.3.171'
 	
 //	logging spring cleaning - use slf4j instead of commons-logging	
 	runtime group: 'org.slf4j', name: 'jcl-over-slf4j', version: SLF4J_VERSION
@@ -65,7 +65,7 @@ run {
 }
 
 task wrapper(type: Wrapper) {
-	gradleVersion = '1.4'
+	gradleVersion = '1.6'
 }
 
 /* perhaps reenable once it's upgraded for groovy 2
