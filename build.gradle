@@ -12,13 +12,13 @@ repositories {
 
 dependencies {
 
-	final SPRING_VERSION = '3.2.2.RELEASE'
-	final BATCH_VERSION = '2.2.0.RC1'
+	final SPRING_VERSION = '3.2.3.RELEASE'
+	final BATCH_VERSION = '2.2.0.RELEASE'
 	final SPOCK_VERSION = '0.7-groovy-2.0'
 	final SLF4J_VERSION = '1.7.5'
 
 	// use the indy jars (java 7 only!)
-	compile 'org.codehaus.groovy:groovy:2.1.2:indy'
+	compile 'org.codehaus.groovy:groovy:2.1.5:indy'
 
 	compile group: 'org.springframework.batch', name: 'spring-batch-core', version: BATCH_VERSION
 
@@ -45,10 +45,6 @@ dependencies {
 	testCompile group: 'org.springframework', name: 'spring-test', version: SPRING_VERSION
 }
 
-configurations {
-	all*.exclude module: 'commons-logging' // we use slf4j instead
-}
-
 mainClassName = 'org.springframework.batch.core.launch.support.CommandLineJobRunner'
 
 run {
@@ -56,7 +52,7 @@ run {
 }
 
 task wrapper(type: Wrapper) {
-	gradleVersion = '1.6'
+	gradleVersion = '1.7-rc-1'
 }
 
 /* perhaps reenable once it's upgraded for groovy 2
