@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/robokaso/Groovy-Spring-Batch-Template.png)](https://travis-ci.org/robokaso/Groovy-Spring-Batch-Template)
+[![Build Status](https://travis-ci.org/critsk/Groovy-Spring-Batch-Template.png)](https://travis-ci.org/critsk/Groovy-Spring-Batch-Template)
 
 Groovy Spring Batch Template
 ============================
