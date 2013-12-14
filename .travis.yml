@@ -1,7 +1,7 @@
 language: groovy
 
 jdk:
-  - openjdk7
+  - oraclejdk7
 
 install: ./gradlew -q assemble
 script: ./gradlew clean check jacocoTestReport distZip --stacktrace
