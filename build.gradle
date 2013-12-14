@@ -12,13 +12,13 @@ repositories {
 
 dependencies {
 
-	final SPRING_VERSION = '3.2.4.RELEASE'
-	final BATCH_VERSION = '2.2.2.RELEASE'
+	final SPRING_VERSION = '4.0.0.RELEASE'
+	final BATCH_VERSION = '2.2.3.RELEASE'
 	final SPOCK_VERSION = '0.7-groovy-2.0'
 	final SLF4J_VERSION = '1.7.5'
 
 	// use the indy jars (java 7 only!)
-	compile 'org.codehaus.groovy:groovy:2.1.9:indy'
+	compile 'org.codehaus.groovy:groovy:2.2.1:indy'
 
 	compile group: 'org.springframework.batch', name: 'spring-batch-core', version: BATCH_VERSION
 
