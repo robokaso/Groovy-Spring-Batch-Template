@@ -6,14 +6,13 @@ apply plugin: 'codenarc'
 
 repositories {
 	mavenCentral()
-	maven { url "http://maven.springframework.org/release" }
-	maven { url "http://maven.springframework.org/milestone" }
+	maven { url 'http://repo.spring.io/milestone' }
 }
 
 dependencies {
 
 	final SPRING_VERSION = '4.0.0.RELEASE'
-	final BATCH_VERSION = '2.2.3.RELEASE'
+	final BATCH_VERSION = '2.2.4.RELEASE'
 	final SPOCK_VERSION = '0.7-groovy-2.0'
 	final SLF4J_VERSION = '1.7.5'
 
