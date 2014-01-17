@@ -14,6 +14,7 @@ dependencies {
 	final SPRING_VERSION = '4.0.0.RELEASE'
 	final BATCH_VERSION = '2.2.4.RELEASE'
 	final SPOCK_VERSION = '0.7-groovy-2.0'
+	final LOGBACK_VERSION = '1.0.13'
 	final SLF4J_VERSION = '1.7.5'
 
 	// use the indy jars (java 7 only!)
@@ -30,9 +31,8 @@ dependencies {
 	compile group: 'com.h2database', name: 'h2', version: '1.3.174'
 	
 //	logging spring cleaning - use slf4j instead of commons-logging	
-	runtime group: 'org.slf4j', name: 'jcl-over-slf4j', version: SLF4J_VERSION
-	runtime group: 'ch.qos.logback', name: 'logback-classic', version: '1.0.13'
-	compile group: 'org.slf4j', name: 'slf4j-api', version: SLF4J_VERSION
+	compile group: 'ch.qos.logback', name: 'logback-classic', version: LOGBACK_VERSION
+	compile group: 'org.slf4j', name: 'jcl-over-slf4j', version: SLF4J_VERSION
 	
 	testCompile group: 'org.spockframework', name: 'spock-core', version: SPOCK_VERSION
 	testCompile group: 'org.spockframework', name: 'spock-spring', version: SPOCK_VERSION
