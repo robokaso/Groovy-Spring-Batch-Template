@@ -1,7 +1,5 @@
 package example
 
-import javax.sql.DataSource
-
 import com.jolbox.bonecp.BoneCPDataSource
 import org.springframework.batch.core.launch.support.SimpleJobLauncher
 import org.springframework.batch.core.repository.JobRepository
@@ -13,8 +11,10 @@ import org.springframework.context.annotation.Configuration
 import org.springframework.jdbc.datasource.DataSourceTransactionManager
 import org.springframework.transaction.PlatformTransactionManager
 
+import javax.sql.DataSource
+
 @Configuration
-class ExampleConfiguration {
+class Application {
 
 	@Value('${batch.jdbc.driver}')
 	private String driverClassName
