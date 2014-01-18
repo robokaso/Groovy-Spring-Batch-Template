@@ -43,7 +43,7 @@ dependencies {
 mainClassName = 'org.springframework.batch.core.launch.support.CommandLineJobRunner'
 
 run {
-	args 'launch-context.xml', 'job1'
+	args 'example.ExampleConfiguration', 'job1'
 }
 
 task wrapper(type: Wrapper) {

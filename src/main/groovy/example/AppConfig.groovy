@@ -1,54 +1,45 @@
 package example
 
 import com.jolbox.bonecp.BoneCPDataSource
-import org.springframework.batch.core.launch.support.SimpleJobLauncher
-import org.springframework.batch.core.repository.JobRepository
+import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.beans.factory.annotation.Qualifier
-import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
-import org.springframework.jdbc.datasource.DataSourceTransactionManager
-import org.springframework.transaction.PlatformTransactionManager
+import org.springframework.context.annotation.PropertySource
+import org.springframework.core.env.Environment
+import org.springframework.core.io.ResourceLoader
+import org.springframework.jdbc.datasource.init.DatabasePopulatorUtils
+import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator
 
 import javax.sql.DataSource
 
 @Configuration
+@EnableBatchProcessing
+@PropertySource("classpath:batch.properties")
 class AppConfig {
 
-	@Value('${batch.jdbc.driver}')
-	private String driverClassName
+    @Autowired
+    private Environment env
 
-	@Value('${batch.jdbc.url}')
-	private String driverUrl
+    @Autowired
+    private ResourceLoader resourceLoader
 
-	@Value('${batch.jdbc.user}')
-	private String driverUsername
+    @Bean(destroyMethod="close")
+    DataSource dataSource() {
+        // create datasource
+        def ds = new BoneCPDataSource(
+                driverClass: env.getProperty('batch.jdbc.driver'),
+                        jdbcUrl: env.getProperty('batch.jdbc.url'),
+                        username: env.getProperty('batch.jdbc.user'),
+                        password: env.getProperty('batch.jdbc.password')
+                )
 
-	@Value('${batch.jdbc.password}')
-	private String driverPassword
+        // initialize database
+        def populator = new ResourceDatabasePopulator()
+        populator.addScript(resourceLoader.getResource(env.getProperty('batch.schema.script')))
+        DatabasePopulatorUtils.execute(populator, ds)
 
-	@Autowired
-	@Qualifier('jobRepository')
-	private JobRepository jobRepository
-
-	@Bean(destroyMethod="close")
-	DataSource dataSource() {
-		new BoneCPDataSource(
-				driverClass: driverClassName,
-				jdbcUrl: driverUrl,
-				username: driverUsername,
-				password: driverPassword
-		)
-	}
-
-	@Bean
-	SimpleJobLauncher jobLauncher() {
-		new SimpleJobLauncher(jobRepository: jobRepository)
-	}
-
-	@Bean
-	PlatformTransactionManager transactionManager() {
-		new DataSourceTransactionManager(dataSource())
-	}
+        // return datasource
+        ds
+    }
 }
