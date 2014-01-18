@@ -14,7 +14,7 @@ import org.springframework.transaction.PlatformTransactionManager
 import javax.sql.DataSource
 
 @Configuration
-class Application {
+class AppConfig {
 
 	@Value('${batch.jdbc.driver}')
 	private String driverClassName
