@@ -1,54 +1,41 @@
 package example
 
-import javax.sql.DataSource
-
-import com.jolbox.bonecp.BoneCPDataSource
-import org.springframework.batch.core.launch.support.SimpleJobLauncher
-import org.springframework.batch.core.repository.JobRepository
+import org.springframework.batch.core.Job
+import org.springframework.batch.core.Step
+import org.springframework.batch.core.configuration.annotation.JobBuilderFactory
+import org.springframework.batch.core.configuration.annotation.StepBuilderFactory
+import org.springframework.batch.item.ItemReader
+import org.springframework.batch.item.ItemWriter
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.beans.factory.annotation.Qualifier
-import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.Configuration
-import org.springframework.jdbc.datasource.DataSourceTransactionManager
-import org.springframework.transaction.PlatformTransactionManager
+import org.springframework.context.annotation.Import
 
 @Configuration
+@Import(AppConfig.class)
+@ComponentScan("example")
 class ExampleConfiguration {
 
-	@Value('${batch.jdbc.driver}')
-	private String driverClassName
+    @Autowired
+    private JobBuilderFactory jobs
 
-	@Value('${batch.jdbc.url}')
-	private String driverUrl
+    @Autowired
+    private StepBuilderFactory steps
 
-	@Value('${batch.jdbc.user}')
-	private String driverUsername
+    @Bean
+    Job job1(Step step1) {
+        jobs.get("job1")
+                .start(step1)
+                .build()
+    }
 
-	@Value('${batch.jdbc.password}')
-	private String driverPassword
-
-	@Autowired
-	@Qualifier('jobRepository')
-	private JobRepository jobRepository
-
-	@Bean(destroyMethod="close")
-	DataSource dataSource() {
-		new BoneCPDataSource(
-				driverClass: driverClassName,
-				jdbcUrl: driverUrl,
-				username: driverUsername,
-				password: driverPassword
-		)
-	}
-
-	@Bean
-	SimpleJobLauncher jobLauncher() {
-		new SimpleJobLauncher(jobRepository: jobRepository)
-	}
-
-	@Bean
-	PlatformTransactionManager transactionManager() {
-		new DataSourceTransactionManager(dataSource())
-	}
+    @Bean
+    Step step1(ItemReader<Object> reader, ItemWriter<Object> writer) {
+        steps.get("step1")
+                .<Object, Object>chunk(1)
+                .reader(reader)
+                .writer(writer)
+                .build()
+    }
 }
