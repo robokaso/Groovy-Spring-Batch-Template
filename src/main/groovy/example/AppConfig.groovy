@@ -28,11 +28,11 @@ class AppConfig {
     DataSource dataSource() {
         // create datasource
         def ds = new BoneCPDataSource(
-                driverClass: env.getProperty('batch.jdbc.driver'),
-                        jdbcUrl: env.getProperty('batch.jdbc.url'),
-                        username: env.getProperty('batch.jdbc.user'),
-                        password: env.getProperty('batch.jdbc.password')
-                )
+                driverClass:    env.getProperty('batch.jdbc.driver'),
+                jdbcUrl:        env.getProperty('batch.jdbc.url'),
+                username:       env.getProperty('batch.jdbc.user'),
+                password:       env.getProperty('batch.jdbc.password')
+        )
 
         // initialize database
         def populator = new ResourceDatabasePopulator()
